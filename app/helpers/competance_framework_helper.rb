@@ -1,0 +1,2 @@
+module CompetanceFrameworkHelper
+end

@@ -1,0 +1,390 @@
+<!-- Section - Resume Start -->
+<section id="resume" class="bg-gray-dark">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h3 class="font-alt font-w-600 letter-spacing-2 title-extra-large text-uppercase text-white">Mon CV</h3>
+                <p class="mt-3 text-gray text-extra-large">
+                    <i>"Learning how to learn is the most important skill of life."<br>Roderick Thorp.</i>
+                </p>
+                <span class="bg-base-color mt-4 mx-auto sep-line-medium-thick-long"></span>
+            </div>
+            <!-- //.col-lg-8 -->
+        </div>
+        <!-- //.row -->
+
+        <!-- ============================================================= -->
+                                <!-- Expériences -->
+        <!-- ============================================================= -->
+        <div class="row justify-content-center mt-5 pt-5">
+            <div class="col-lg-10">
+                <div class="text-center text-md-left">
+                    <span class="d-block font-alt letter-spacing-2 text-extra-large text-uppercase text-white">Mes Expériences professionnel
+                    </span>
+                    <span class="d-block font-a lt letter-spacing-2 mt-1 text-extra-large text-uppercase text-white">
+                        <!-- < %= @experiences.order("debut ASC").first.debut.year % > - Now -->
+                        <%= @debut_experience %> - Now
+                    </span>
+                </div>
+                <!-- //.text-center -->
+                    
+                <% @experiences.each do |experience| %>
+                    <% if user_signed_in? %>
+                        <!-- Editer expériences -->
+                            <a href="<%= edit_experience_path(experience.id) %>" class="bg-gray-2 box-shadow-wide rounded text-white text-extra-large control-cv">
+                                <i class="fa fa-pencil-square-o ease"> Editer </i>
+                            </a>
+                        <!-- Editer expériences -->
+
+                        <!-- Ajout expériences -->
+                            <a href="<%= new_experience_path %>" class="bg-gray-2 box-shadow-wide rounded text-white text-extra-large control-cv">
+                                <i class="fa fa-plus ease"> Ajouter</i>
+                            </a>
+                        <!-- Ajout expériences -->
+                    <% end %>
+
+                    <div id="accordion-work" class="accordion mt-5 mt-md-4">
+                        <div class="item pb-5 pb-md-4">
+                            <span class="item-label bg-base-color font-alt letter-spacing-1 rounded text-medium text-white">
+                                <%= experience.debut.year %> - <%= experience.fin.year %>
+                            </span>
+                            
+                            <a href="#collapseWork<%= experience.id %>" data-toggle="collapse" aria-expanded="true" aria-controls="collapseWork<%= experience.id %>" class="bg-gray-2 rounded"></a>
+                            
+                            <div class="card border border-gray pt-4 pt-md-0 rounded-0">
+
+                                <div class="card-header" role="tab" id="headingWork<%= experience.id %>">
+                                    <span class="d-block font-alt letter-spacing-1 pt-1 text-extra-large text-uppercase text-white">
+                                        <%= experience.intitule %> - <%= experience.societe %>
+                                    </span>
+                                </div>
+                                <!-- //.card-header -->
+
+                                <div id="collapseWork<%= experience.id %>" class="collapse show" role="tabpanel" aria-labelledby="headingWork<%= experience.id %>">
+                                    <div class="card-body pt-0">
+                                        <p class="m-0 text-gray text-medium">
+                                            <%= experience.description %>
+                                        </p>
+                                    </div>
+                                    <!-- //.card-body -->
+                                </div>
+                                <!-- //.collapse -->
+                            </div>
+                            <!-- //.card -->
+                        </div>
+                        <!-- //.item -->
+                    </div>        
+                <% end %>
+            </div>
+        </div>
+                        
+        <!-- ============================================================= -->
+                                <!-- Formations -->
+        <!-- ============================================================= -->
+        <div class="row justify-content-center mt-5 pt-5">
+            <div class="col-lg-10">
+                <div class="text-center text-md-left">
+                    <span class="d-block font-alt letter-spacing-2 text-extra-large text-uppercase text-white">Mes Formations</span>
+                    <span class="d-block font-alt letter-spacing-2 mt-1 text-extra-large text-uppercase text-white">
+                        <%= @debut_formation %> - Now
+                    </span>
+                </div>
+                <!-- //.text-center -->
+                
+                <% @formations.each do |formation| %>
+                    <% if user_signed_in? %>
+                        <!-- Editer formation -->
+                            <a href="<%= edit_formation_path(formation.id) %>" class="bg-gray-2 box-shadow-wide rounded text-white text-extra-large control-cv">
+                                <i class="fa fa-pencil-square-o ease"> Editer </i>
+                            </a>
+                        <!-- Editer formation -->
+
+                        <!-- Ajout formation -->
+                            <a href="<%= new_formation_path %>" class="bg-gray-2 box-shadow-wide rounded text-white text-extra-large control-cv">
+                                <i class="fa fa-plus ease"> Ajouter</i>
+                            </a>
+                        <!-- Ajout formation -->
+                    <% end %>
+                    <!-- Ajout Formation -->
+
+                    <div id="accordion-education" class="accordion mt-5 mt-md-4">
+                        <div class="item pb-5 pb-md-4">
+                            <span class="item-label bg-base-color font-alt letter-spacing-1 rounded text-medium text-white">
+                                <%= formation.debut.year %> - <%= formation.fin.year %>
+                            </span>
+                            
+                            <a href="#collapseEducation1" data-toggle="collapse" aria-expanded="true" aria-controls="collapseEducation1" class="bg-gray-2 rounded"></a>
+                            
+                            <div class="card border border-gray pt-4 pt-md-0 rounded-0">
+                                <div class="card-header" role="tab" id="headingEducation1">
+                                    <span class="d-block font-alt letter-spacing-1 pt-1 text-extra-large text-uppercase text-white">
+                                        <%= formation.diplome %> - <%= formation.etablissement %>
+                                    </span>
+                                </div>
+                                <!-- //.card-header -->
+
+                                <div id="collapseEducation1" class="collapse show" role="tabpanel" aria-labelledby="headingEducation1">
+                                    <div class="card-body pt-0">
+                                        <p class="m-0 text-gray text-medium">
+                                            <%= formation.description %>
+                                        </p>
+                                    </div>
+                                    <!-- //.card-body -->
+                                </div>
+                                <!-- //.collapse -->
+                            </div>
+                            <!-- //.card -->
+                        </div>
+                        <!-- //.item -->
+                        
+                    </div>
+                    <!-- //.accordion -->
+                <% end %>
+            </div>
+            <!-- //.col-lg-10 -->
+        </div>
+        <!-- //.row -->
+        
+    </div>
+    <!-- //.container -->
+</section>
+<!-- //Section - Resume End -->
+
+<!-- ======================================== -->
+
+<!-- Section - Skills Start -->
+<section id="skills" class="bg-gray-dark-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h3 class="font-alt font-w-600 letter-spacing-2 title-extra-large text-uppercase text-white">Compétences & Expertise</h3>
+                <p class="mt-3 text-gray text-extra-large">
+                    <i>"A winner is someone who recognizes his God-given talents, works his tail off to develop them into skills, and uses these skills to accomplish his goals."<br>Larry Bird</i>
+                </p>
+                <span class="bg-base-color mt-4 mx-auto sep-line-medium-thick-long"></span>
+            </div>
+            <!-- //.col-lg-8 -->
+        </div>
+        <!-- //.row -->
+        
+        <div class="row justify-content-center mt-5 pt-lg-5">
+            <!-- ======================================== -->
+                    <!-- Début Compétance langage -->
+            <!-- ======================================== -->
+            <% @competances_langage.each do |competance_langage| %>
+                <div class="col-sm-6 col-md-4 col-lg-2 text-center py-3 py-lg-0">
+                    <div class="chart-circle">
+                        <div class="chart">
+                            <span class="item-progress" data-percent="<%= competance_langage.level %>"></span>
+                        </div>
+                        <!-- //.chart -->
+                        <% if user_signed_in? %>
+                            <a href="<%= edit_competance_langage_path(competance_langage.id) %>">
+                                <span class="percent bg-base-color box-shadow-wide font-alt font-w-600 rounded text-small text-white"><i class="fa fa-pencil-square-o ease"> Editer </i>
+                                </span>
+                            </a>
+                        <% end %>
+                        <span class="percent bg-base-color box-shadow-wide font-alt font-w-600 rounded text-small text-white"><%= competance_langage.level %>%
+                        </span>
+                    </div>
+                    <!-- //.chart-circle -->
+                    
+                    <span class="d-block font-alt letter-spacing-1 mt-3 text-extra-large text-uppercase text-white"><%= competance_langage.langage %>
+                    </span>
+                </div>
+                <!-- //.col-lg-2 -->
+            <% end %>
+            <!-- ======================================== -->
+                    <!-- Fin Compétance langage -->
+            <!-- ======================================== -->
+
+            
+            <!-- ======================================== -->
+                    <!-- Début Compétance Framework -->
+            <!-- ======================================== -->
+            <% @competances_framework.each do |competance_framework| %>
+                <div class="col-sm-6 col-md-4 col-lg-2 text-center py-3 py-lg-0">
+                    <div class="chart-circle">
+                        <div class="chart">
+                            <span class="item-progress" data-percent="<%= competance_framework.level %>"></span>
+                        </div>
+                        <!-- //.chart -->
+                        <% if user_signed_in? %>
+                            <a href="<%= edit_competance_framework_path(competance_framework.id) %>">
+                                <span class="percent bg-base-color box-shadow-wide font-alt font-w-600 rounded text-small text-white"><i class="fa fa-pencil-square-o ease"> Editer </i>
+                                </span>
+                            </a>
+                        <% end %>
+                        <span class="percent bg-base-color box-shadow-wide font-alt font-w-600 rounded text-small text-white"><%= competance_framework.level %>%
+                        </span>
+                    </div>
+                    <!-- //.chart-circle -->
+                    
+                    <span class="d-block font-alt letter-spacing-1 mt-3 text-extra-large text-uppercase text-white"><%= competance_framework.framework %>
+                    </span>
+                </div>
+                <!-- //.col-lg-2 -->
+            <% end %>
+
+            <!-- ======================================== -->
+                    <!-- Fin Compétance Framework -->
+            <!-- ======================================== -->
+
+
+            <!-- ======================================== -->
+                    <!-- Début Compétance CMS -->
+            <!-- ======================================== -->
+            <% @competances_cms.each do |competance_cms| %>
+                <div class="col-sm-6 col-md-4 col-lg-2 text-center py-3 py-lg-0">
+                    <div class="chart-circle">
+                        <div class="chart">
+                            <span class="item-progress" data-percent="<%= competance_cms.level %>"></span>
+                        </div>
+                        <!-- //.chart -->
+                        <% if user_signed_in? %>
+                            <a href="<%= edit_competance_cm_path(competance_cms.id) %>">
+                                <span class="percent bg-base-color box-shadow-wide font-alt font-w-600 rounded text-small text-white"><i class="fa fa-pencil-square-o ease"> Editer </i>
+                                </span>
+                            </a>
+                        <% end %>
+                        <span class="percent bg-base-color box-shadow-wide font-alt font-w-600 rounded text-small text-white"><%= competance_cms.level %>%
+                        </span>
+                    </div>
+                    <!-- //.chart-circle -->
+                    
+                    <span class="d-block font-alt letter-spacing-1 mt-3 text-extra-large text-uppercase text-white"><%= competance_cms.cms %>
+                    </span>
+                </div>
+                <!-- //.col-lg-2 -->
+            <% end %>
+
+            <!-- ======================================== -->
+                    <!-- Fin Compétance CMS -->
+            <!-- ======================================== -->
+
+
+            <!-- ======================================== -->
+                    <!-- Début Compétance SGBD -->
+            <!-- ======================================== -->
+            <% @competances_sgbd.each do |competance_sgbd| %>
+                <div class="col-sm-6 col-md-4 col-lg-2 text-center py-3 py-lg-0">
+                    <div class="chart-circle">
+                        <div class="chart">
+                            <span class="item-progress" data-percent="<%= competance_sgbd.level %>"></span>
+                        </div>
+                        <!-- //.chart -->
+                        <% if user_signed_in? %>
+                            <a href="<%= edit_competance_sgbd_path(competance_sgbd.id) %>">
+                                <span class="percent bg-base-color box-shadow-wide font-alt font-w-600 rounded text-small text-white"><i class="fa fa-pencil-square-o ease"> Editer </i>
+                                </span>
+                            </a>
+                        <% end %>
+                        <span class="percent bg-base-color box-shadow-wide font-alt font-w-600 rounded text-small text-white"><%= competance_sgbd.level %>%
+                        </span>
+                    </div>
+                    <!-- //.chart-circle -->
+                    
+                    <span class="d-block font-alt letter-spacing-1 mt-3 text-extra-large text-uppercase text-white"><%= competance_sgbd.sgbd %>
+                    </span>
+                </div>
+                <!-- //.col-lg-2 -->
+            <% end %>
+            <!-- ======================================== -->
+                    <!-- Fin Compétance SGBD -->
+            <!-- ======================================== -->
+        </div>
+        <!-- //.row -->
+    </div>
+    <!-- //.container -->
+</section>
+<!-- //Section - Skills End -->
+
+<!-- ================================= -->
+
+        <!-- Section - Knowledge Start -->
+        <section id="knowledge" class="bg-gray-dark-2 pt-0">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h3 class="font-alt font-w-600 letter-spacing-2 title-extra-large text-uppercase text-white">Connaissances</h3>
+                        <p class="mt-3 text-gray text-extra-large">
+                            <i>"Human behavior flows from three main sources: desire, emotion, and knowledge."<br>Plato</i>
+                        </p>
+                        <span class="bg-base-color mt-4 mx-auto sep-line-medium-thick-long"></span>
+                    </div>
+                    <!-- //.col-lg-8 -->
+                </div>
+                <!-- //.row -->
+                
+                <div class="row mt-5 pt-lg-5">
+                    <div class="col-lg-6 py-3">
+                        <span class="d-block font-alt letter-spacing-1 mb-3 text-extra-large text-uppercase text-white">Brand Marketing</span>
+                        
+                        <div class="chart-bar bg-gray">
+                            <span class="item-progress bg-gray-2" data-percent="60"></span>
+                            <span class="percent bg-base-color box-shadow-wide font-alt font-w-600 rounded text-small text-white">60%</span>
+                        </div>
+                        <!-- //.chart-bar -->
+                    </div>
+                    <!-- //.col-lg-6 -->
+                    
+                    <div class="col-lg-6 py-3">
+                        <span class="d-block font-alt letter-spacing-1 mb-3 text-extra-large text-uppercase text-white">Brand Design</span>
+                        
+                        <div class="chart-bar bg-gray">
+                            <span class="item-progress bg-gray-2" data-percent="55"></span>
+                            <span class="percent bg-base-color box-shadow-wide font-alt font-w-600 rounded text-small text-white">55%</span>
+                        </div>
+                        <!-- //.chart-bar -->
+                    </div>
+                    <!-- //.col-lg-6 -->
+                    
+                    <div class="col-lg-6 py-3">
+                        <span class="d-block font-alt letter-spacing-1 mb-3 text-extra-large text-uppercase text-white">Web Development</span>
+                        
+                        <div class="chart-bar bg-gray">
+                            <span class="item-progress bg-gray-2" data-percent="75"></span>
+                            <span class="percent bg-base-color box-shadow-wide font-alt font-w-600 rounded text-small text-white">75%</span>
+                        </div>
+                        <!-- //.chart-bar -->
+                    </div>
+                    <!-- //.col-lg-6 -->
+                    
+                    <div class="col-lg-6 py-3">
+                        <span class="d-block font-alt letter-spacing-1 mb-3 text-extra-large text-uppercase text-white">Internet Marketing</span>
+                        
+                        <div class="chart-bar bg-gray">
+                            <span class="item-progress bg-gray-2" data-percent="75"></span>
+                            <span class="percent bg-base-color box-shadow-wide font-alt font-w-600 rounded text-small text-white">75%</span>
+                        </div>
+                        <!-- //.chart-bar -->
+                    </div>
+                    <!-- //.col-lg-6 -->
+                    
+                    <div class="col-lg-6 py-3">
+                        <span class="d-block font-alt letter-spacing-1 mb-3 text-extra-large text-uppercase text-white">Digital Design</span>
+                        
+                        <div class="chart-bar bg-gray">
+                            <span class="item-progress bg-gray-2" data-percent="65"></span>
+                            <span class="percent bg-base-color box-shadow-wide font-alt font-w-600 rounded text-small text-white">65%</span>
+                        </div>
+                        <!-- //.chart-bar -->
+                    </div>
+                    <!-- //.col-lg-6 -->
+                    
+                    <div class="col-lg-6 py-3">
+                        <span class="d-block font-alt letter-spacing-1 mb-3 text-extra-large text-uppercase text-white">Video Editing</span>
+                        
+                        <div class="chart-bar bg-gray">
+                            <span class="item-progress bg-gray-2" data-percent="65"></span>
+                            <span class="percent bg-base-color box-shadow-wide font-alt font-w-600 rounded text-small text-white">65%</span>
+                        </div>
+                        <!-- //.chart-bar -->
+                    </div>
+                    <!-- //.col-lg-6 -->
+                </div>
+                <!-- //.row -->
+            </div>
+            <!-- //.container -->
+        </section>
+        <!-- //Section - Knowledge End

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KTNFreelance - Resume Template</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- CSS du template -->
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- Bootstrap CSS -->
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        
+        <!-- Font Awesome CSS -->
+        <link href="/assets/css/icons-mind.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        
+        <!-- Include all css plugins (below), or include individual files as needed -->
+        <link href="/assets/css/magnific-popup.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/flexslider.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/flickity.min.css" rel="stylesheet" type="text/css">
+        
+        <!-- Theme CSS -->
+        <link href="/assets/css/theme.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+        
+        <!-- Color Scheme CSS -->
+        <link href="/assets/css/color_pink.css" rel="stylesheet" type="text/css">
+    <!-- CSS du template -->
+        
+        <!--Favicon-->
+        <link rel="shortcut icon" href="/assets/img/K.jpg" type="image/x-icon">
+        <!-- <link rel="icon" href="/assets/img/code_geek_ok.png" type="image/x-icon"> -->
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation start -->
+      <%= render "layouts/navigation_top" %>
+    <!-- Navigation end -->
+    
+    <!-- <p class="notice">< %= notice % ></p> -->
+    <!-- <p class="alert">< %= alert % ></p> -->
+
+        <!-- LOGIN MESSAGE -->
+    <% flash.each do |name, msg| %>
+        <div class="alert-contain navbar-message">
+          <div class="alert-new alert-<%= name %> alert-dismissible show"  role="alert">
+              <%= msg %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"  id="x">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+        </div>
+    <% end %>
+
+    <%= yield %>
+
+    <!-- Footer start -->
+      <%= render "layouts/footer" %>
+    <!-- Footer end -->
+
+    <!-- Scroll to top -->
+    <a href="#page-top" class="page-scroll scroll-to-top bg-base-color"><i class="fa fa-angle-up"></i></a>
+    <!-- JS du template -->
+        
+        
+        <!-- Main JS -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        
+        <!-- Include all js plugins (below) -->
+        <script src="assets/js/pace.min.js"></script>
+        <script src="assets/js/jquery.sticky.js"></script>
+        <script src="assets/js/jquery.easing.min.js"></script>
+        <script src="assets/js/jquery.matchHeight.min.js"></script>
+        <script src="assets/js/jquery.inview.min.js"></script>
+        <script src="assets/js/jquery.countTo.js"></script>
+        <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/jquery.flexslider.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        
+        <!-- BG Slider JS -->
+        <script src="assets/js/flickity.pkgd.min.js"></script>
+        
+        <!-- Theme JS -->
+        <script src="assets/js/theme.js"></script>
+        <script src="assets/js/switch_style.js"></script>
+    <!-- JS du template -->
+  </body>
+</html>

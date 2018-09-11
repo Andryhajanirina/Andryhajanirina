@@ -1,0 +1,32 @@
+<section id="new_registration" class="bg-gray-dark-2">
+ 	<h1>Ajouter Compétance Langage</h1>
+  	<div class="container">
+	    <div class="row justify-content-center mt-5 pt-lg-5 bg-gray rounded">
+	        <div class="col-lg-8">
+	          	<%= form_for @competance_langage, url: competance_langage_index_path do |f| %>
+	              	<div class="row">
+	                	<div class="col-sm-12">
+	                  		<div class="form-element">
+	                    		<label for="langage">Langage</label>
+	                    		<%= f.text_field :langage, class: "form-control" %>
+	                  		</div>
+	                	</div>
+	              	</div>
+
+	              	<div class="row">
+	                	<div class="col-sm-12">
+	                  		<div class="form-element">
+	                    		<label for="level">Level (Niveau de 1 à 10)</label>
+	                    		<%= f.text_field :level, class: "form-control text-editor" %>
+	                  		</div>
+	                	</div>
+	              	</div>
+
+	                <div class="form-group">
+	                    <button type="submit" class="btn btn-lg btn-primary">Ajouter Langage</button>
+	                </div>
+	          	<% end %>
+	        </div>
+	    </div>
+  	</div>
+</section>

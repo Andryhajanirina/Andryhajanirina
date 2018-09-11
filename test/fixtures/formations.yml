@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  intitule: MyString
+  diplome: MyString
+  etablissement: MyString
+  debut: 2018-08-13 15:09:29
+  fin: 2018-08-13 15:09:29
+  description: MyText
+
+two:
+  intitule: MyString
+  diplome: MyString
+  etablissement: MyString
+  debut: 2018-08-13 15:09:29
+  fin: 2018-08-13 15:09:29
+  description: MyText

@@ -1,0 +1,4 @@
+<% @experiences.each do |experience| %>
+	<p><%= "#{experience.debut} - #{experience.fin} : #{experience.intitule} | #{experience.societe}" %></p>
+	<p><%= "#{experience.description}" %></p>
+<% end -%>

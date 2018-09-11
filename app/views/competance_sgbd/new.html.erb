@@ -1,0 +1,32 @@
+<section id="new_registration" class="bg-gray-dark-2">
+ 	<h1>Ajouter Compétance SGBD</h1>
+  	<div class="container">
+	    <div class="row justify-content-center mt-5 pt-lg-5 bg-gray rounded">
+	        <div class="col-lg-8">
+	          	<%= form_for @competance_sgbd, url: competance_sgbd_index_path do |f| %>
+	              	<div class="row">
+	                	<div class="col-sm-12">
+	                  		<div class="form-element">
+	                    		<label for="sgbd">SGBD</label>
+	                    		<%= f.text_field :sgbd, class: "form-control" %>
+	                  		</div>
+	                	</div>
+	              	</div>
+
+	              	<div class="row">
+	                	<div class="col-sm-12">
+	                  		<div class="form-element">
+	                    		<label for="level">Level (Niveau de 1 à 10)</label>
+	                    		<%= f.text_field :level, class: "form-control text-editor" %>
+	                  		</div>
+	                	</div>
+	              	</div>
+
+	                <div class="form-group">
+	                    <button type="submit" class="btn btn-lg btn-primary">Ajouter SGBD</button>
+	                </div>
+	          	<% end %>
+	        </div>
+	    </div>
+  	</div>
+</section>

@@ -1,0 +1,59 @@
+<section id="new_registration" class="bg-gray-dark-2">
+ <h1>Modifier expérience <%= @experience.intitule %></h1>
+  <div class="container">
+    <div class="row justify-content-center mt-5 pt-lg-5 bg-gray rounded">
+        <div class="col-lg-8">
+          <%= form_for @experience, url: experience_index_path do |f| %>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-element">
+                    <label for="intitule">Intitulé du poste</label>
+                    <%= f.text_field :intitule, class: "form-control" %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-element">
+                    <label for="societe">Société</label>
+                    <%= f.text_field :societe, class: "form-control text-editor" %>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-element">
+                    <label for="debut">Date début</label>
+                    <%= f.date_field :debut, class: "form-control text-editor" %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-element">
+                    <label for="fin">Date fin</label>
+                    <%= f.date_field :fin, class: "form-control text-editor" %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-element">
+                    <label for="description">Description</label>
+                    <%= f.text_area :description, class: "form-control text-editor" %>
+                  </div>
+                </div>
+              </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-lg btn-primary">Modifier expérience</button>
+                </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</section>
