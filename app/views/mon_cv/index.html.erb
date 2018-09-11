@@ -46,7 +46,7 @@
                     <div id="accordion-work" class="accordion mt-5 mt-md-4">
                         <div class="item pb-5 pb-md-4">
                             <span class="item-label bg-base-color font-alt letter-spacing-1 rounded text-medium text-white">
-                                <%= experience.debut.year %> - <%= experience.fin.year %>
+                                <%= experience.debut.year %> - <%= experience.fin == nil ? experience.debut.year : experience.fin.year %>
                             </span>
                             
                             <a href="#collapseWork<%= experience.id %>" data-toggle="collapse" aria-expanded="true" aria-controls="collapseWork<%= experience.id %>" class="bg-gray-2 rounded"></a>

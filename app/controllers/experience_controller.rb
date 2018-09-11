@@ -29,14 +29,13 @@ class ExperienceController < ApplicationController
   end
 
   def edit
-    
   end
 
   def update
     @experience.update(experience_params)
     if @experience
       flash[:success] = "Compétance experience modifié avec succès"
-      redirect_to articles_path
+      redirect_to @experience
     else
       flash[:notice] = "Compétance experience n'a pas pu être enregistré"
       render "edit"

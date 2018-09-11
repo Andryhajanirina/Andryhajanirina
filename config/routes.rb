@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   resources :formation
 
+  patch 'experience/{id}', to: 'experience#update', as: :experience_edited
+
   root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
