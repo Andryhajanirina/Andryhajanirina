@@ -37,7 +37,7 @@ def update
   @competance_sgbd.update(competance_sgbd_params)
   if @competance_sgbd
     flash[:success] = "Compétance SGBD modifié avec succès"
-    redirect_to articles_path
+    redirect_to competance_sgbd_path
   else
     flash[:notice] = "Compétance SGBD n'a pas pu être enregistré"
     render "edit"
@@ -50,7 +50,7 @@ end
   private
 
   def competance_sgbd_params
-    params.require(:competance_sgbd).permit(:langage, :level)
+    params.require(:competance_sgbd).permit(:sgbd, :level)
   end
 
   def get_id

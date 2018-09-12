@@ -30,6 +30,14 @@ class CompetanceCmsController < ApplicationController
   end
 
   def update
+    @competance_cms.update(competance_cms_params)
+    if @competance_cms
+      flash[:success] = "Compétance cms modifié avec succès"
+      redirect_to competance_cm_path
+    else
+      flash[:notice] = "Compétance cms n'a pas pu être enregistré"
+      render "edit"
+    end
   end
 
   def destroy

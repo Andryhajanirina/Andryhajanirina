@@ -28,7 +28,18 @@ class FormationController < ApplicationController
   def show
   end
 
+  def edit
+  end
+  
   def update
+    @formation.update(formation_params)
+    if @formation
+      flash[:success] = "Compétance formation modifié avec succès"
+      redirect_to formation_path
+    else
+      flash[:notice] = "Compétance formation n'a pas pu être enregistré"
+      render "edit"
+    end
   end
 
   def destroy

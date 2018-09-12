@@ -1,14 +1,14 @@
 <section id="new_registration" class="bg-gray-dark-2">
- 	<h1>Modifier Compétance SGBD <%= @competance_sgbd.sgbd %></h1>
+ 	<h1>Ajouter Compétance CMS</h1>
   	<div class="container">
 	    <div class="row justify-content-center mt-5 pt-lg-5 bg-gray rounded">
 	        <div class="col-lg-8">
-	          	<%= form_for @competance_sgbd, url: competance_sgbd_path do |f| %>
+	          	<%= form_for @competance_cms, url: competance_cm_path do |f| %>
 	              	<div class="row">
 	                	<div class="col-sm-12">
 	                  		<div class="form-element">
-	                    		<label for="sgbd">SGBD</label>
-	                    		<%= f.text_field :sgbd, class: "form-control" %>
+	                    		<label for="cms">CMS</label>
+	                    		<%= f.text_field :cms, class: "form-control" %>
 	                  		</div>
 	                	</div>
 	              	</div>
@@ -17,7 +17,7 @@
 	                	<div class="col-sm-12">
 	                  		<div class="form-element">
 	                  			<label for="level">Level (Niveau de 1 à 10)</label>
-                                <select name="competance_sgbd[level]" id="competance_sgbd_level" class="form-control form-control-lg">
+                                <select name="competance_cms[level]" id="competance_cms_level" class="form-control form-control-lg">
                                 	<% @level = 10 %>
                                 	<% for @level in (10..100).step(10) do %>                                    	
                                     	<option value="<%= @level %>"><%= @level %>%</option>
@@ -28,7 +28,7 @@
 	              	</div>
 
 	                <div class="form-group">
-	                    <button type="submit" class="btn btn-lg btn-primary">Modifier SGBD</button>
+	                    <button type="submit" class="btn btn-lg btn-primary">Ajouter compétance</button>
 	                </div>
 	          	<% end %>
 	        </div>

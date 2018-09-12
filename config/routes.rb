@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'level/index'
+  get 'level/new'
+  get 'level/edit'
+  get 'level/update'
   resources :competance_sgbd
   resources :competance_cms
   resources :competance_framework
@@ -18,8 +22,6 @@ Rails.application.routes.draw do
   resources :competance
 
   resources :formation
-
-  patch 'experience/{id}', to: 'experience#update', as: :experience_edited
 
   root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

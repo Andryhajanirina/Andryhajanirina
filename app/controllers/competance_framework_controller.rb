@@ -30,6 +30,14 @@ class CompetanceFrameworkController < ApplicationController
   end
 
   def update
+    @competance_framework.update(competance_framework_params)
+    if @competance_framework
+      flash[:success] = "Compétance framework modifié avec succès"
+      redirect_to competance_framework_path
+    else
+      flash[:notice] = "Compétance framework n'a pas pu être enregistré"
+      render "edit"
+    end
   end
 
   def destroy

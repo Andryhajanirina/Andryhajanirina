@@ -37,7 +37,7 @@ before_action :get_id, only: [:show, :edit, :update, :destroy]
     @competance_langage.update(competance_langage_params)
     if @competance_langage
       flash[:success] = "Compétance langage modifié avec succès"
-      redirect_to articles_path
+      redirect_to competance_langage_path
     else
       flash[:notice] = "Compétance langage n'a pas pu être enregistré"
       render "edit"

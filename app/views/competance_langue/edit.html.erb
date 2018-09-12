@@ -1,2 +1,37 @@
-<h1>CompetanceLangue#destroy</h1>
-<p>Find me in app/views/competance_langue/destroy.html.erb</p>
+<section id="new_registration" class="bg-gray-dark-2">
+ 	<h1>Modifier Compétance langue <%= @competance_langue.sgbd %></h1>
+  	<div class="container">
+	    <div class="row justify-content-center mt-5 pt-lg-5 bg-gray rounded">
+	        <div class="col-lg-8">
+	          	<%= form_for @competance_langue, url: competance_langue_path do |f| %>
+	              	<div class="row">
+	                	<div class="col-sm-12">
+	                  		<div class="form-element">
+	                    		<label for="langue">Langue</label>
+	                    		<%= f.text_field :langue, class: "form-control" %>
+	                  		</div>
+	                	</div>
+	              	</div>
+
+	              	<div class="row">
+	                	<div class="col-sm-12">
+	                  		<div class="form-element">
+	                  			<label for="level">Level (Niveau de 1 à 10)</label>
+                                <select name="competance_langue[level]" id="competance_langue_level" class="form-control form-control-lg">
+                                	<% @level = 10 %>
+                                	<% for @level in (10..100).step(10) do %>                                    	
+                                    	<option value="<%= @level %>"><%= @level %>%</option>
+                                    <% end %>
+                                </select>
+	                  		</div>
+	                	</div>
+	              	</div>
+
+	                <div class="form-group">
+	                    <button type="submit" class="btn btn-lg btn-primary">Modifier langue</button>
+	                </div>
+	          	<% end %>
+	        </div>
+	    </div>
+  	</div>
+</section>
