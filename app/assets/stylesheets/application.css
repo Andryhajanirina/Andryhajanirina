@@ -26,7 +26,7 @@
 }
 
 .connecter:hover{
-    color: green;    
+    color: #c80a48;    
 }
 
 .creer-compte{
@@ -52,7 +52,8 @@
 }
 
 .navbar .nav-link:hover {
-    color: #de18c7 !important;
+    color: #c80a48 !important;
+    font-weight: bold;
 }
 
 .profile-perso{
@@ -61,4 +62,22 @@
 
 .photos-profile{
     height: 80% !important;
+}
+
+.contact{
+    color: #c80a48;
+}
+
+.contact:hover{
+    color: #fb3c7a;
+}
+
+.btn-base-color:hover{
+    -webkit-box-shadow: -2px 1px 5px 11px rgba(255,255,255,1) !important;
+    -moz-box-shadow: -2px 1px 5px 11px rgba(255,255,255,1) !important;
+    box-shadow: -2px 1px 5px 11px rgba(255,255,255,1) !important;
+}
+
+footer{
+    padding: 50px !important;
 }
