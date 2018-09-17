@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :mon_cv
 
-  get 'profile/index', to: 'profile#index'
+  get 'profile', to: 'profile#index'
 
   resources :niveau
 
