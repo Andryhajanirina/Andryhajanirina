@@ -23,29 +23,9 @@
                     <%= link_to "Profile", profile_path, class: "#{current_class?(profile_path)} nav-link page-scroll" %>
                 </li>
 
-                <!-- <li class="nav-item">
-                    < %= link_to "Portfolio", "#portfolio_path", class: "#{current_class?("#portfolio_path")} nav-link page-scroll" % >
-                </li> -->
-
-                <!-- <li class="nav-item">
-                    < %= link_to "Services", "#service_path", class: "#{current_class?("#ervice_path")} nav-link page-scroll" % >
-                </li> -->
-
                 <li class="nav-item">
                     <%= link_to "Mon CV", mon_cv_index_path, class: "#{current_class?(mon_cv_index_path)} nav-link page-scroll" %>
                 </li>
-
-                <!-- <li class="nav-item">
-                    < %= link_to "Références", "#reference_path", class: "#{current_class?("#reference_path")} nav-link page-scroll" % >
-                </li> -->
-
-                <!-- <li class="nav-item">
-                    < %= link_to "Compétence", "#competance_path", class: "#{current_class?("#competance_path")} nav-link page-scroll" % >
-                </li> -->
-
-        <!--         <li class="nav-item">
-                    < %= link_to "Contact", "#contact_path", class: "#{current_class?("#contact_path")} nav-link page-scroll" % >
-                </li> -->
 
                 <% if user_signed_in? %>
                     <li class="nav-item">
@@ -55,11 +35,6 @@
                 <% else %>
                     <li class="nav-item">
                         <a href="<%= new_user_session_path %>" class="fa fa-sign-in ease connecter" style="font-size: xx-large;">
-                            
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <!-- <a href="< %= new_user_registration_path % >" class="fa fa-user-plus ease creer-compte" style="font-size: xx-large;"> -->
                             
                         </a>
                     </li>

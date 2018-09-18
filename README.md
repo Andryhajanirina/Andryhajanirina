@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## J'ai fais ce projet pour concevoir mon portfolio
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Son contenu :
+* Des menus de navigation
+* Page d'accueil présentant un titre et un bouton CTA
+* Dans les menu de navigation : Accueil, Mon profile, Mon CV
