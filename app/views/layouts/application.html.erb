@@ -21,7 +21,8 @@
         <meta property="og:title" content="Bienvenue sur mon profile">
         <meta property="og:description" content="Je m'appelle <%= user_info.firstname %> <%= user_info.lastname %>, 31 ans, née & grandit à Antananarivo (Madagascar). Je suis passionné par le développement web, plutôt à l'aise avec le back-end.">
         <meta property="og:url" content="https://andryhajanirina.herokuapp.com/mon_cv">
-        <meta property="og:image" content="https://andryhajanirina.herokuapp.com/assets/images/freelance_ktn.jpg">
+        <!-- <meta property="og:image" content="https://andryhajanirina.herokuapp.com/assets/images/freelance_ktn.jpg"> -->
+        <%= tag :meta, property: 'og:image', content: image_url('freelance_ktn.jpg') %>
         <meta property="og:locale" content="fr_FR">
 
         <meta name="google-site-verification" content="4FPWwn0e-wKH3DwAt1Mem9F6qT0NAwe9TXP4Qkk4J_E" />
@@ -51,8 +52,6 @@
     <!-- CSS du template -->
         
         <!--Favicon-->
-        <!-- <link rel="shortcut icon" href="/assets/img/K.jpg" type="image/x-icon"> -->
-        <!-- <link rel="shortcut icon" href="/assets/img/profile-picture-1.jpg" type="image/x-icon"> -->
         <%= favicon_link_tag asset_path('img/profile-picture-1.jpg') %>
   </head>
 
