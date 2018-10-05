@@ -8,8 +8,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <!-- CSS du template -->
-        <meta name="description" content="Je m'appelle <%= user_info.firstname %> <%= user_info.lastname %>, 31 ans, née & grandit à Antananarivo (Madagascar). Je suis passionné par le développement web, plutôt à l'aise avec le back-end."/>
+    <!-- Les balises meta -->
+        <!-- <meta name="description" content="Je m'appelle <%= user_info.firstname %> <%= user_info.lastname %>, 31 ans, née & grandit à Antananarivo (Madagascar). Je suis passionné par le développement web, plutôt à l'aise avec le back-end."/> -->
+        <meta name="description" content="<%= page_description(yield(:description)) %>"/>
 
         <meta name="keywords" content="developpeur, back-end, developpeur back-end, developpeur freelance, integrateur, profile andry, parcours andry, portfolio andry, andry hajanirina, freelance, ktn, ktnfreelance, ktn freelance, saisie, saisie online, saisie offline, moderateur, developpement web, php, developpeur php, developpeur java, swift, developpeur swift, developpeur mobile, android, developpeur android, ios, developpeur ios, scraping, agile, méthode agile, méthodologie agile, structuration, XML, OCR, encodage, transcripteur, transcription, audio, transcription audio, traitement de donnée, base de donnée, sololearn, codecademy, openclassroom, hellopro, hellotana, value it, sayna, the hacking project, THP " />
 
@@ -21,12 +22,14 @@
         <meta property="og:title" content="Bienvenue sur mon profile">
         <meta property="og:description" content="Je m'appelle <%= user_info.firstname %> <%= user_info.lastname %>, 31 ans, née & grandit à Antananarivo (Madagascar). Je suis passionné par le développement web, plutôt à l'aise avec le back-end.">
         <meta property="og:url" content="https://andryhajanirina.herokuapp.com/mon_cv">
-        <!-- <meta property="og:image" content="https://andryhajanirina.herokuapp.com/assets/images/freelance_ktn.jpg"> -->
-        <%= tag :meta, property: 'og:image', content: image_url('freelance_ktn.jpg') %>
+        <meta property="og:image" content="<%= image_url('freelance_ktn.jpg') %>">
         <meta property="og:locale" content="fr_FR">
 
         <meta name="google-site-verification" content="4FPWwn0e-wKH3DwAt1Mem9F6qT0NAwe9TXP4Qkk4J_E" />
 
+    <!-- Fin des balises meta -->
+
+    <!-- CSS du template -->
         <!-- Bootstrap CSS -->
         <link href="/assets/stylesheets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         
